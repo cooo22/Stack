@@ -1,7 +1,7 @@
 # Stack Visualization – 
 
 **Group Name:** <Group 9>
-**Group Members:** < Terencejohn>
+**Group Members:** < Terencejohn >
 
 ## Description
 A 2D visualizer for an array-based, bounded LIFO stack (maximum 10 elements). The stack logic and the GUI are separate components, and the GUI only talks to the stack through its methods. Two versions are included: a Java Swing app (graded program) and a Vesper-style web demo.
