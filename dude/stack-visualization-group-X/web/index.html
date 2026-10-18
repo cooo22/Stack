@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stack — LIFO Stack Visualizer</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body style="background:#000;color:#fff">
+<!-- Description: Vesper-style web visualizer for the array-based bounded stack lab. Programmed by: <Your Name> <Course> <cn> <Subject> | Version 1.0 | Last Modified 2026-10-18 -->
+<div class="grain"></div>
+<canvas id="bg" class="bg-canvas" aria-hidden="true"></canvas>
+<video class="hero-video" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260818_072341_50851634-bbc3-4c33-9acc-7647d4db44aa.mp4" autoplay muted loop playsinline></video>
+<div class="page">
+  <header class="header">
+    <a class="logo appear appear--scale" href="#top" aria-label="Stack" style="--d:.08s">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
+      Stack<span class="logo-suffix"></span>
+    </a>
+    <nav id="site-nav" aria-label="Primary">
+      <a class="appear appear--scale" style="--d:.16s" href="#lab">Visualizer</a>
+      <a class="appear appear--soft" style="--d:.28s" href="#history-card">History</a>
+      <a class="appear appear--scale" style="--d:.40s" href="#status">Status</a>
+    </nav>
+    <a class="btn btn-solid appear appear--scale" style="--d:.34s" href="#lab">Start pushing</a>
+  </header>
+
+  <main class="hero" id="top">
+    <div class="hero-copy">
+      <div class="badge appear appear--pop" style="--d:.22s">Array-based stack · capacity 10</div>
+      <h1>
+        <span class="headline-line appear appear--mask" style="--d:.42s">See every <em>push and pop</em> as it</span>
+        <span class="headline-line appear appear--mask" style="--d:.62s">happens in the stack.</span>
+      </h1>
+      <p class="lede appear appear--soft" style="--d:.82s">Last in, first out. Push a value, pop it, peek at the top, or move it to a second stack.</p>
+    </div>
+  </main>
+
+  <section class="lab" id="lab">
+    <article class="card"><h2>Stack A</h2><div class="meter"><span id="fill"></span></div><div class="stack" id="stackA" aria-live="polite"></div></article>
+    <article class="card"><h2>Stack B</h2><div class="stack" id="stackB"></div></article>
+    <article class="card controls">
+      <h2>Controls</h2>
+      <div class="row"><input id="val" type="number" inputmode="numeric" placeholder="Enter a value" aria-label="Value to push">
+        <button class="btn btn-solid" data-act="push">Push</button></div>
+      <div class="row">
+        <button class="btn btn-ghost" data-act="pop">Pop</button>
+        <button class="btn btn-ghost" data-act="peek">Peek</button>
+        <button class="btn btn-ghost" data-act="check">Check stack</button>
+        <button class="btn btn-ghost" data-act="random">Random</button>
+        <button class="btn btn-ghost" data-act="clear">Clear</button>
+      </div>
+      <div class="row">
+        <button class="btn btn-ghost" data-act="undo">Undo</button>
+        <button class="btn btn-ghost" data-act="transfer">Move A to B</button>
+        <button class="btn btn-ghost" data-act="popB">Pop B</button>
+        <label class="cap">Capacity <select id="cap"></select></label>
+      </div>
+      <p id="status" class="ok" role="status">Ready. Enter a value and press Push.</p>
+      <div id="history-card"><h2>History</h2><ol id="history"></ol></div>
+    </article>
+  </section>
+
+  <footer class="stats">
+    <div class="stat appear appear--stat" style="--d:1.12s"><span class="dot"></span>Size <b id="sSize">0 / 10</b></div>
+    <div class="stat appear appear--stat" style="--d:1.28s"><span class="dot"></span>Top of stack A <b id="sTop">none</b></div>
+    <div class="stat appear appear--stat" style="--d:1.44s"><span class="dot"></span>State <b id="sState">empty</b></div>
+  </footer>
+</div>
+<script src="js/bg.js"></script>
+<script src="js/stack.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

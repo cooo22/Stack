@@ -1,0 +1,11 @@
+/* Description: Entry point. Opens the Swing stack visualizer.
+Last Modified: 2026-10-17
+Version: 1.0
+*/
+import javax.swing.SwingUtilities;
+
+public class Main {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new StackGUI().setVisible(true));
+    }
+}
