@@ -58,4 +58,4 @@ Add images to `screenshots/` and link them here.
 ## Contributors
 | Member | Contribution |
 |---|---|
-| <Terence> | <e.g. ArrayStack, tests, UI> |
+| Terence | <e.g. ArrayStack, tests, UI> |
