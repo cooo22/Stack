@@ -1,5 +1,5 @@
 /* Description: Array-based bounded stack (max 10). Logic only, no DOM code.
-   Programmed by: <Your Name> <Course> <cn> <Subject>  Last Modified: 2026-10-18  Version: 1.0 */
+   Programmed by: Terence john Martin BSIT CC104 DATA STRUCTURES AND ALGORITHMS  Last Modified: 2026-10-17  Version: 1.0 */
 class ArrayStack {
   constructor() { this.MAX = 10; this.data = new Array(10); this.top = -1; this.cap = 10; }
   isEmpty() { return this.top === -1; }
