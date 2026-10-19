@@ -195,5 +195,49 @@ GitHub Repository
 
 <img width="434" height="150" alt="Screenshot 2026-10-20 011612" src="https://github.com/user-attachments/assets/cf48d35f-c477-4559-8523-ca0db936b4fd" />
 
+Questions
+1. What is the LIFO principle? How is it demonstrated by your program?
+## LIFO means Last In, First Out: the element added most recently is the first one removed, like a pile of plates where you take the top plate first. In our program push stores a value at data[++top] and pop returns data[top--], so the newest value always leaves first. If you push 10, 20 and 30, the first pop gives 30, then 20, then 10. The display also shows this, with the newest element on top marked TOP.
+
+2. Suppose your program removes the bottom element when POP is executed. Give a specific sequence of operations that would expose this implementation error.
+## Push 10, Push 20, Push 30, then Pop. A correct stack removes 30 and leaves [10, 20] with 20 on top. A faulty stack that removes the bottom element removes 10 and leaves [20, 30] with 30 on top. The status message would also report 10 popped instead of 30, and a Peek afterwards would return 30 instead of 20.
+
+3. What problem can occur if the GUI displays an element that is no longer actually stored in the stack?
+## The screen and the real data disagree, so the user trusts false information. The user may try to pop or peek an element they can see but the stack no longer has, and get a different value or an underflow message. The size, the TOP marker and the overflow behaviour will look wrong, and the bug is hard to find because the stack logic is correct while the display is lying. The GUI should therefore always draw from the stack's real contents.
+
+4. What should happen if the user clicks Pop while the stack is empty? Why?
+## Nothing should be removed and the program should not crash. It should show the message "STACK UNDERFLOW: Cannot pop, stack is empty" and leave the stack unchanged. There is no element to remove, and moving top below -1 would make the stack invalid and could cause an array index error later. In our program ArrayStack.pop() throws an exception and the GUI shows it in red.
+
+5. What should happen if the user clicks Peek while the stack is empty? Why?
+## The program should show an empty-stack status message (ours says "EMPTY STACK: Nothing to peek, stack is empty") and not return a value. There is no top element to read, and reading data[-1] would crash or return a leftover value from an old operation, which would be wrong. Peek never changes the stack, so the stack stays empty.
+
+6. A student reports that the GUI displays [10, 20, 30], but the internal stack contains [10, 20]. Identify the likely source of the problem and explain how you would debug it.
+## The GUI is out of sync with the stack. Likely causes: the GUI keeps its own list and updated it without calling the stack's pop(), the screen was not refreshed after the pop, or the GUI added the value to the display even though the stack rejected it with an overflow error. To debug, I would print the stack's contents after every operation and compare them with the display, check that each button handler calls the stack method first and then refreshes, make sure exceptions are not ignored, and use breakpoints to step through the handler. The best fix is to have the GUI draw only from the stack's real data, which our program does with toArray().
+
+7. Identify one part of your program where the data structure logic and the GUI logic interact. Explain what happens during that interaction.
+## The PUSH button. When it is clicked, StackGUI.push() reads the text field with parse() and calls a.push(v) on ArrayStack. If the stack is full, ArrayStack throws an IllegalStateException with the overflow message, and the GUI catches it and shows it in red without changing anything. Otherwise the value is stored at data[++top], the GUI adds a history line and shows a green message, and refresh() calls panelA.update(a.toArray(), a.getCapacity()) so StackPanel repaints the stack with the new top element.
+
+8. Why should the stack's data structure logic be separated from the GUI logic? Identify one advantage of doing so in your implementation.
+## Separating them gives each part one job, so each can be tested and changed without breaking the other. One advantage in our program: because ArrayStack has no GUI code, we could test it alone with StackTests (underflow, overflow, peek and LIFO checks all run in the console), and we could add a second stack, undo and a capacity selector to the GUI without changing the stack rules. The same logic was also reused for the web version.
+
+9. Compare an array-based stack with a linked-list-based stack. How would the implementation of capacity, overflow, underflow, and memory usage differ between the two approaches?
+# Array-based stack vs Linked-list-based stack
+
+| Feature | Array-based stack | Linked-list-based stack |
+|---|---|---|
+| **Capacity** | Fixed when the array is created (ours is `int[10]`, and the selector can only lower the usable limit). | Grows one node at a time, so there is no built-in limit unless the program counts one. |
+| **Overflow** | Happens when top reaches the last index, so we must check `isFull()` before pushing. | Happens only if memory runs out, or if a limit was added on purpose. |
+| **Underflow** | When `top == -1`. | When the head reference is null. |
+| **Memory** | All slots are reserved up front, so unused slots are wasted, but there is no extra data per element and the memory is contiguous. | Uses memory only for stored elements, but every node needs an extra reference, and each push allocates a new node. |
+
+## Push and pop are O(1) in both versions. The array is simpler and uses less memory per element when it is mostly full; the linked list is more flexible when the number of elements is unknown.
+
+10. Which part of the program does your group find it difficult to implement? Why? How did you solve the problem?
+
+## did it solo with with AI for help. everything was difficult but i managed it fine also im new to github so everything was so confusing how to add this and that, but i done and did it so this whole thing was a greatful learning for the real world. setting it up it was hard for the first time but i managed to fix everthing step by step like the folder structure it the correct order so i cannot be confused where did i put this and that. everything is difficult to implement how did i solved it? readig the file with the help of AI, find altenatives, search the web for an open source for example the website(https://dsavisualization.com/stack/) for reference. keep cool and don't be hasty do it step by step.
+
+(whispers) lowk everything WAS SO HARD my gosh 😭
+
+
 
 
