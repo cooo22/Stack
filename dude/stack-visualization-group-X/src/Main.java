@@ -1,4 +1,5 @@
 /* Description: Entry point. Opens the Swing stack visualizer.
+Programmed by: Terence john Martin BSIT CC104 <subject>
 Last Modified: 2026-10-17
 Version: 1.0
 */
