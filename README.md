@@ -42,18 +42,19 @@ screenshots/
 `ArrayStack` uses `int[10]` and an index `top` (-1 means empty). `push` does `data[++top] = v`, `pop` returns `data[top--]`, `peek` returns `data[top]` without moving `top`. `isFull()` is `top == capacity - 1`. Overflow and underflow throw `IllegalStateException`, which the GUI shows in the status bar. The GUI reads a copy from `toArray()` and never touches the array.
 
 ## Screenshots
-Add images to `screenshots/` and link them here.
+<img width="1419" height="790" alt="Screenshot 2026-10-20 000526" src="https://github.com/user-attachments/assets/bd4cb2c1-178e-44ab-9d4c-2fa3b57015a5" />
+
 
 ## AI Disclosure
-- **Tool:** Claude (Anthropic) – <opus 5.5>
+- **Tool:** Claude (Anthropic) – opus 5.5
 - **Task:** code drafting for the Java and web versions, README draft, test drafting
-- **Prompts used:** <help me understand this group activity and ill be the one making it>
+- **Prompts used:** help me understand this group activity and ill be the one making it
 - **Extent:** <e.g. substantial drafting>
-- **Human verification:** <terence> reviewed, ran and understood the code before committing
-- **Why and how:** <cuz the project is hard for me >
-- **Estimated AI-assisted share:** <50%>
-- **Changes made to the AI output:** <UI, animations, bugs>
-- **What I learned:** <i learned how to push and pop>
+- **Human verification:** terence john reviewed, ran and understood the code before committing
+- **Why and how:** cuz the project is hard for me
+- **Estimated AI-assisted share:** <75%>
+- **Changes made to the AI output:** improved UI, add animations, fix bugs.
+- **What I learned:** i learned how to push and pop, learned github, learned folder structure for me not to be confused
 
 ## Contributors
 | Member | Contribution |
