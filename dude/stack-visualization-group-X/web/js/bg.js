@@ -1,5 +1,5 @@
 /* Description: Animated canvas background (drifting glow + rising particles). Shows when the hero video is not playing.
-   Programmed by: <Your Name> <Course> <cn> <Subject>  Last Modified: 2026-10-18  Version: 1.1 */
+   Programmed by: Terence john Martin BSIT CC104 DATA STRUCTURES AND ALGORITHMS  Last Modified: 2026-10-17  Version: 1.1 */
 (() => {
   const c = document.getElementById("bg"), x = c.getContext("2d");
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
