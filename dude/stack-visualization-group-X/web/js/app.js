@@ -1,5 +1,5 @@
 /* Description: UI + entrance animation fallback. Talks to ArrayStack only through its methods.
-   Programmed by: <Your Name> <Course> <cn> <Subject>  Last Modified: 2026-10-18  Version: 1.0 */
+   Programmed by: Terence john Martin BSIT CC104 DATA STRUCTURES AND ALGORITHMS  Last Modified: 2026-10-17  Version: 1.0 */
 (() => {
   const $ = s => document.querySelector(s);
   // Entrance animation: mark finished, and force visible if animations never run.
