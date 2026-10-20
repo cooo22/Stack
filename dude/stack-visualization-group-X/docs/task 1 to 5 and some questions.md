@@ -146,10 +146,10 @@ Libraries used
 
 
 
-# Task 3 – Program Documentation
+#Task 3 – Program Documentation
 GitHub Repository
 
-# https://github.com/cooo22/stack-visualization-group-9.git
+https://github.com/cooo22/stack-visualization-group-9.git
 
 
 
