@@ -59,4 +59,4 @@ screenshots/
 ## Contributors
 | Member | Contribution |
 |---|---|
-| Terence | <e.g. ArrayStack, tests, UI> |
+| Terence |  ArrayStack, tests, UI  |
