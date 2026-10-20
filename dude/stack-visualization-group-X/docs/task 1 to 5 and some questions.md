@@ -142,9 +142,18 @@ Libraries used
 
 •	The web version (web folder) uses plain HTML, CSS and JavaScript with no libraries. It mirrors the same stack logic in stack.js.
 
-Task 3 – Program Documentation
+
+
+
+
+# Task 3 – Program Documentation
 GitHub Repository
-[[https://github.com/cooo22/Stack.git](https://github.com/cooo22/stack-visualization-group-9.git)]
+
+# https://github.com/cooo22/stack-visualization-group-9.git
+
+
+
+
 
 
 #Task 4 – Screenshot 1 to 11 and
