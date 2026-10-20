@@ -48,11 +48,11 @@ screenshots/
 ## AI Disclosure
 - **Tool:** Claude (Anthropic) – opus 5.5
 - **Task:** code drafting for the Java and web versions, README draft, test drafting
-- **Prompts used:** help me understand this group activity and ill be the one making it
-- **Extent:** <e.g. substantial drafting>
-- **Human verification:** terence john reviewed, ran and understood the code before committing
+- **Prompts used** help me understand this group activity and ill be the one making it
+- **Extent of Use** Substantial drafting used for a large portion of the initial code structure.
+- **Human Verification** I Terence John reviewed, ran, tested, and fully understood the code before committing it to the repository
 - **Why and how:** cuz the project is hard for me
-- **Estimated AI-assisted share:** <75%>
+- **Estimated AI-assisted share:** 67%
 - **Changes made to the AI output:** improved UI, add animations, fix bugs.
 - **What I learned:** i learned how to push and pop, learned github, learned folder structure for me not to be confused
 
